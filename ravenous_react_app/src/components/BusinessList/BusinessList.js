@@ -1,23 +1,20 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './BusinessList.css';
-// eslint-disable-next-line no-unused-vars
-import Business from '..Business/Business';
+
+import Business from '../Business/Business';
 
 class BusinessList extends React.Component {
-    render() {
-        return (
-<div className="BusinessList">
-  <Business />
-  <Business />
-  <Business />
-  <Business />
-  <Business />
-  <Business />
-</div>
-
-        )
-    }  
+  render() {
+    return (
+      <div className="BusinessList">
+        {
+          this.props.businesses.map(business => {
+            return <Business business={business} />
+          })
+        }
+      </div>
+    );
+  }
 }
 
-export default BusinessList; 
+export default BusinessList;
